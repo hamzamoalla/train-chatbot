@@ -1,0 +1,65 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: check train availability
+  steps:
+  - intent: check_train_availability
+  - action: action_check_train_availability
+
+- story: check train availability in a day
+  steps:
+  - intent: check_train_availability_in_a_day
+  - action: action_check_train_availability_in_a_day
+
+- story: find nearest train station
+  steps:
+  - intent: find_nearest_train_station
+  - action: action_find_nearest_train_station
+
+#- story: check train availability between time and time
+ # steps:
+  #- intent: check_train_availability_between_time_and_time
+  #- action: action_check_train_availability_between_time_and_time
+
+- story: check train availability before time
+  steps:
+  - intent: check_train_availability_before_time
+  - action: action_check_train_availability_before_time
+
+- story: check next train availability
+  steps:
+  - intent: check_next_train_availability
+  - action: action_check_next_train_availability
+
+- story: check train availability before time in a date
+  steps:
+  - intent: check_train_availability_before_time_in_a_date
+  - action: action_check_train_availability_before_time_in_a_date

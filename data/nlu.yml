@@ -1,0 +1,191 @@
+version: "3.1"
+
+
+nlu:
+  - intent: check_train_availability
+    examples: |
+      - Existe-t-il un train de [Sfax](from_place) à [Tunis](to_place) le [2024-04-05](date) à [9:30](time)?
+
+  - intent: check_train_availability_in_a_day
+    examples: |
+      - Existe-t-il un train de [Sfax](from_place) à [Tunis](to_place) le [2024-04-05](date) ?
+      - Existe-t-il un train de [Beau Sejour](from_place) a [Zerzour](to_place) [aujourdhui](date) ?
+
+  - intent: find_nearest_train_station
+    examples: |
+      - quelle est la station la plus proche?
+      - quelle est la plus proche station ?
+
+#  - intent: check_train_availability_between_time_and_time
+ #   examples: |
+  #    - Existe-t-il un train de [Sfax](from_place) à [Tunis](to_place) le [2024-04-05](date) entre [9:30](from_time) et [18:50](to_time)  ?
+   #   - Existe-t-il un train de [Beau Sejour](from_place) a [Zerzour](to_place) entre entre [10:39](from_time) et [19:40](to_time) [aujourdhui](date) ?
+
+  - intent: check_train_availability_before_time
+    examples: |
+      - Existe-t-il un train de [Sfax](from_place) à [Tunis](to_place) avant [18:50](time)  ?
+      - Existe-t-il un train de [Beau Sejour](from_place) a [Zerzour](to_place) avant [19:40](time) ?
+
+  - intent: check_train_availability_before_time_in_a_date
+    examples: |
+      - Existe-t-il un train de [Sfax](from_place) à [Tunis](to_place) avant [18:50](time) [2024-04-05](date)   ?
+      - Existe-t-il un train de [Beau Sejour](from_place) a [Zerzour](to_place) avant [2024-04-05](date) [19:40](time) ?
+
+  - intent: check_next_train_availability
+    examples: |
+      - quand le prochain train de [Sfax](from_place) à [Tunis](to_place) ?
+      - quand le prochain de [Beau Sejour](from_place) a [Zerzour](to_place) ?
+
+
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+
+  # - intent: check_train_availability
+  #   examples: |
+  #     - Existe-t-il un train de [Sfax](from_place) à [Tunis](to_place) le [2024-04-05](date) à [9:30](time)?
+  #     - Y a-t-il un train partant de [Sousse](from_place) pour [Tunis](to_place) le [2024-04-06](date) à [10:00](time)?
+  #     - Quels trains vont de [Bizerte](from_place) à [Sfax](to_place) le [2024-04-07](date) à [14:30](time)?
+  #   - import: examples/train_schedule_examples.yml
+
+#imports:
+#  - nlu: train_schedule_examples.yml
+  
+regex_features:
+  regex_patterns:
+    from_place: 
+      - pattern: "Sfax|Monastir|Ben Arous|Tunis|Sousse|Bizerte|Gabès|Aouinet|Sakiet Ezzit|Bou Arada|Jelida|El Aroussa|Sidi Ayed|Gaafour|El Akhouat|Le Krib|Sidi Bou Rouis|Trika|Le Sers|Sidi Salah|Oued Tessa|Les Zouarines|Dahmani|Ain Mesria|Fej Etameur|Oued Sarrath|Kalaa Khasba|Haidra|Foussana|Voie Ballastiere- El hrich|Dokhane|Bir Bourekba|Hammamet|Omar Khayem|M'Razka|Nabeul Voyageurs|M'Saken|Jemmal|Moknine Marchandises|Founi|Hamada|La Hencha|Beau Sejour|Menzel Bourguiba|Borj Cedria|Erriadh|La Goulette|Aguila|M'Dhilla|Sehib|Tabeddit|Redeyef|El Jem|Kasserine|Sbeitla|Zerzour|Jilma|Hajeb El Aioun|Sidi Saad|Gouraia|Jerissa PV|Tajerouine|Mahdia|Kerker|Mahdia Ezzahra|Borj Arif|Sidi Masaoud|Baghdedi|Charaf|Bekalta|Teboulba|Teboulba Zi|Moknine Voyageurs|Sidi Bou Goubrine|Moknine Griba|Ksar Helal|Ksar Helal Zi|Sayeda|Lamta|Bouhjar|Ksiba Bennane|Khnis/Bembla|Frina|Monastir Zi|Kalaa Kebira|La Faculte 2|Monastir|Sousse Bab Jdid|Sousse Mohamed V|Sousse Sud|Sousse Zi|Sahline Ville|Sahline Sebkha|Les Hotels Monastir|Aeroport Skanes Monastir|Sidi Bou Ali|Skanes|La Faculte|Sousse Voyageurs|Kalaa Sghira|Borj Ettoum|Mejez El Bab|Sidi M'Himech|Beja Marchandises|Beja Voy|Menzel Gare|Mastouta|Sidi Smail|Bou Salem|Jendouba V|Oued Meliz|Ghardimaou|Oued Ellil|Mannouba|Le Bardo|Cité Erraoudha|Ghannouch|Enfida|Benbachir|Tunis Ville|Tebourba|El Heri|Oued Zarga|Jedeida|Chaouat|Sidi Othman|Ain Ghelal|Ain Rahma|Ichkeul|Tinja|La Pecherie|Bizerte|kalaa Sghira|Khanguet|Tunis-PV|Lorbeuss|Nabeul Marchandise|Bouficha|Mahdia Zone Touristique|El Ayoun|Magroun|Sidi Mtir|Bou Arkoub|Belli|Turki|Grombalia|Fondouk Jedid|Bir El Bey|Gabes|Hammam Chat|Tahar Sfar|Arret Du Stade|Hammam Lif|Bou Kornine|Ez-Zahra|Rades Mel|Rades|Lycee Technique Rades|Sidi Rezig|Skhira|Megrine|Megrine Ryad|Depot Farhat Hached|Marchandise Sousse|Parc Friguia|Ezzahra Lycée|M'seken Messadine|Ksar Mezouar|Sidi Nsir|Mettarcheni|Chaal|El Arima|Ghraiba|Mezzouna|El Kerma|Maknassy|Menzel Bouzaiane|Sened|Zannouch|Oued El Ksab (23/24)|Cheria|Mahares|Mg 28/29|Le Kriz|Degueche|Tozeur|Gafsa|El Guetar|Mg N1|Segui|El Fejij|Mg N4|Gargour|Metlaoui|Selja|Om El Arais|Maagen Bel Abbes|Feriana|Thelepte|Mekdoudech|Mateur|Mateur Sud|Ghezala|Sidi Abid|Jalta|Jefna|Sedjnane|El Harrech|Tamera|Les Salines|Zaafrane|Le Kef|Djebal Jelloud|Bir Kassa|Sfax|Nassen|Khledia|Oudna|Cheylus|Bir M'Cherga|Depienne|El Ouja|Pont Du Fahs|Thibica|Tarf Echena"  # Exemple de regex pour les lieux de départ
+    to_place: 
+      - pattern: "Sfax|Monastir|Ben Arous|Tunis|Sousse|Bizerte|Gabès|Aouinet|Sakiet Ezzit|Bou Arada|Jelida|El Aroussa|Sidi Ayed|Gaafour|El Akhouat|Le Krib|Sidi Bou Rouis|Trika|Le Sers|Sidi Salah|Oued Tessa|Les Zouarines|Dahmani|Ain Mesria|Fej Etameur|Oued Sarrath|Kalaa Khasba|Haidra|Foussana|Voie Ballastiere- El hrich|Dokhane|Bir Bourekba|Hammamet|Omar Khayem|M'Razka|Nabeul Voyageurs|M'Saken|Jemmal|Moknine Marchandises|Founi|Hamada|La Hencha|Beau Sejour|Menzel Bourguiba|Borj Cedria|Erriadh|La Goulette|Aguila|M'Dhilla|Sehib|Tabeddit|Redeyef|El Jem|Kasserine|Sbeitla|Zerzour|Jilma|Hajeb El Aioun|Sidi Saad|Gouraia|Jerissa PV|Tajerouine|Mahdia|Kerker|Mahdia Ezzahra|Borj Arif|Sidi Masaoud|Baghdedi|Charaf|Bekalta|Teboulba|Teboulba Zi|Moknine Voyageurs|Sidi Bou Goubrine|Moknine Griba|Ksar Helal|Ksar Helal Zi|Sayeda|Lamta|Bouhjar|Ksiba Bennane|Khnis/Bembla|Frina|Monastir Zi|Kalaa Kebira|La Faculte 2|Monastir|Sousse Bab Jdid|Sousse Mohamed V|Sousse Sud|Sousse Zi|Sahline Ville|Sahline Sebkha|Les Hotels Monastir|Aeroport Skanes Monastir|Sidi Bou Ali|Skanes|La Faculte|Sousse Voyageurs|Kalaa Sghira|Borj Ettoum|Mejez El Bab|Sidi M'Himech|Beja Marchandises|Beja Voy|Menzel Gare|Mastouta|Sidi Smail|Bou Salem|Jendouba V|Oued Meliz|Ghardimaou|Oued Ellil|Mannouba|Le Bardo|Cité Erraoudha|Ghannouch|Enfida|Benbachir|Tunis Ville|Tebourba|El Heri|Oued Zarga|Jedeida|Chaouat|Sidi Othman|Ain Ghelal|Ain Rahma|Ichkeul|Tinja|La Pecherie|Bizerte|kalaa Sghira|Khanguet|Tunis-PV|Lorbeuss|Nabeul Marchandise|Bouficha|Mahdia Zone Touristique|El Ayoun|Magroun|Sidi Mtir|Bou Arkoub|Belli|Turki|Grombalia|Fondouk Jedid|Bir El Bey|Gabes|Hammam Chat|Tahar Sfar|Arret Du Stade|Hammam Lif|Bou Kornine|Ez-Zahra|Rades Mel|Rades|Lycee Technique Rades|Sidi Rezig|Skhira|Megrine|Megrine Ryad|Depot Farhat Hached|Marchandise Sousse|Parc Friguia|Ezzahra Lycée|M'seken Messadine|Ksar Mezouar|Sidi Nsir|Mettarcheni|Chaal|El Arima|Ghraiba|Mezzouna|El Kerma|Maknassy|Menzel Bouzaiane|Sened|Zannouch|Oued El Ksab (23/24)|Cheria|Mahares|Mg 28/29|Le Kriz|Degueche|Tozeur|Gafsa|El Guetar|Mg N1|Segui|El Fejij|Mg N4|Gargour|Metlaoui|Selja|Om El Arais|Maagen Bel Abbes|Feriana|Thelepte|Mekdoudech|Mateur|Mateur Sud|Ghezala|Sidi Abid|Jalta|Jefna|Sedjnane|El Harrech|Tamera|Les Salines|Zaafrane|Le Kef|Djebal Jelloud|Bir Kassa|Sfax|Nassen|Khledia|Oudna|Cheylus|Bir M'Cherga|Depienne|El Ouja|Pont Du Fahs|Thibica|Tarf Echena"  # Exemple de regex pour les destinations
+    date:
+      - pattern: "(\\d{4})-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])|aujourd'hui|demain|après-demain"
+      - pattern: "après 1 jour"
+      - pattern: "après 2 jours"
+      - pattern: "après 3 jours"
+      - pattern: "après 4 jours"
+      - pattern: "après 5 jours"
+      - pattern: "après 6 jours"
+      - pattern: "après 7 jours"
+      - pattern: "après 8 jours"
+      - pattern: "après 9 jours"
+      - pattern: "après 10 jours"
+      - pattern: "après 11 jours"
+      - pattern: "après 12 jours"
+      - pattern: "après 13 jours"
+      - pattern: "après 14 jours"
+      - pattern: "après 15 jours"
+      - pattern: "après 16 jours"
+      - pattern: "après 17 jours"
+      - pattern: "après 18 jours"
+      - pattern: "après 19 jours"
+      - pattern: "après 20 jours"
+      - pattern: "après un jour"
+      - pattern: "après deux jours"
+      - pattern: "après trois jours"
+      - pattern: "après quatre jours"
+      - pattern: "après cinq jours"
+      - pattern: "après six jours"
+      - pattern: "après sept jours"
+      - pattern: "après huit jours"
+      - pattern: "après neuf jours"
+      - pattern: "après dix jours"
+      - pattern: "après onze jours"
+      - pattern: "après douze jours"
+      - pattern: "après treize jours"
+      - pattern: "après quatorze jours"
+      - pattern: "après quinze jours"
+      - pattern: "après seize jours"
+      - pattern: "après dix-sept jours"
+      - pattern: "après dix-huit jours"
+      - pattern: "après dix-neuf jours"
+      - pattern: "après vingt jours"
+    time: 
+      - pattern: "([01]?[0-9]|2[0-3]):[0-5][0-9]|maintenant|"  # Exemple de regex pour l'heure au format hh:mm
+
+
+    

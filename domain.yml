@@ -1,0 +1,1212 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - check_train_availability
+  - check_train_availability_in_a_day
+  - find_nearest_train_station
+  - check_train_availability_between_time_and_time
+  - check_train_availability_before_time
+  - check_train_availability_before_time_in_a_date
+  - check_next_train_availability
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+entities:
+  - from_place:
+      exemples:
+        - Sfax
+        - sfax
+        - Tunis Ville
+        - tunis ville
+        - tunisville
+        - Tunis
+        - tunis
+        - Aouinet
+        - aouinet
+        - Sakiet Ezzit
+        - sakiet ezzit
+        - sakietezzit
+        - Bou Arada
+        - bou arada
+        - bouarada
+        - Jelida
+        - jelida
+        - El Aroussa
+        - el aroussa
+        - elaroussa
+        - Sidi Ayed
+        - sidi ayed
+        - sidiayed
+        - Gaafour
+        - gaafour
+        - El Akhouat
+        - el akhouat
+        - elakhouat
+        - Le Krib
+        - le krib
+        - lekrib
+        - Sidi Bou Rouis
+        - sidi bou rouis
+        - sidibourouis
+        - Trika
+        - trika
+        - Le Sers
+        - le sers
+        - lesers
+        - Sidi Salah
+        - sidi salah
+        - sidisalah
+        - Oued Tessa
+        - oued tessa
+        - ouedtessa
+        - Les Zouarines
+        - les zouarines
+        - leszouarines
+        - Dahmani
+        - dahmani
+        - Ain Mesria
+        - ain mesria
+        - ainmesria
+        - Fej Etameur
+        - fej etameur
+        - fejetameur
+        - Oued Sarrath
+        - oued sarrath
+        - ouedsarrath
+        - Kalaa Khasba
+        - kalaa khasba
+        - kalaakhasba
+        - Haidra
+        - haidra
+        - Foussana
+        - foussana
+        - Voie Ballastiere- El hrich
+        - voie ballastiere- el hrich
+        - voieballastiere-elhrich
+        - Dokhane
+        - dokhane
+        - Bir Bourekba
+        - bir bourekba
+        - birbourekba
+        - Hammamet
+        - hammamet
+        - Omar Khayem
+        - omar khayem
+        - omarkhayem
+        - M'Razka
+        - m'razka
+        - Nabeul Voyageurs
+        - nabeul voyageurs
+        - nabeulvoyageurs
+        - M'Saken
+        - m'saken
+        - Jemmal
+        - jemmal
+        - Moknine Marchandises
+        - moknine marchandises
+        - mokninemarchandises
+        - Founi
+        - founi
+        - Hamada
+        - hamada
+        - La Hencha
+        - la hencha
+        - lahencha
+        - Beau Sejour
+        - beau sejour
+        - beausejour
+        - Menzel Bourguiba
+        - menzel bourguiba
+        - menzelbourguiba
+        - Borj Cedria
+        - borj cedria
+        - borjcedria
+        - Erriadh
+        - erriadh
+        - La Goulette
+        - la goulette
+        - lagoulette
+        - Aguila
+        - aguila
+        - M'Dhilla
+        - m'dhilla
+        - Sehib
+        - sehib
+        - Tabeddit
+        - tabeddit
+        - Redeyef
+        - redeyef
+        - El Jem
+        - el jem
+        - eljem
+        - Kasserine
+        - kasserine
+        - Sbeitla
+        - sbeitla
+        - Zerzour
+        - zerzour
+        - Jilma
+        - jilma
+        - Hajeb El Aioun
+        - hajeb el aioun
+        - hajebelaioun
+        - Sidi Saad
+        - sidi saad
+        - sidisaad
+        - Gouraia
+        - gouraia
+        - Jerissa PV
+        - jerissa pv
+        - jerissapv
+        - Tajerouine
+        - tajerouine
+        - Mahdia
+        - mahdia
+        - Kerker
+        - kerker
+        - Mahdia Ezzahra
+        - mahdia ezzahra
+        - mahdiaezzahra
+        - Borj Arif
+        - borj arif
+        - borjarif
+        - Sidi Masaoud
+        - sidi masaoud
+        - sidimasaoud
+        - Baghdedi
+        - baghdedi
+        - Charaf
+        - charaf
+        - Bekalta
+        - bekalta
+        - Teboulba
+        - teboulba
+        - Teboulba Zi
+        - teboulba zi
+        - teboulbazi
+        - Moknine Voyageurs
+        - moknine voyageurs
+        - mokninevoyageurs
+        - Sidi Bou Goubrine
+        - sidi bou goubrine
+        - sidibougoubrine
+        - Moknine Griba
+        - moknine griba
+        - mokninegriba
+        - Ksar Helal
+        - ksar helal
+        - ksarhelal
+        - Ksar Helal Zi
+        - ksar helal zi
+        - ksarhelalzi
+        - Sayeda
+        - sayeda
+        - Lamta
+        - lamta
+        - Bouhjar
+        - bouhjar
+        - Ksiba Bennane
+        - ksiba bennane
+        - ksibabennane
+        - Khnis/Bembla
+        - khnis/bembla
+        - Frina
+        - frina
+        - Monastir Zi
+        - monastir zi
+        - monastirzi
+        - Kalaa Kebira
+        - kalaa kebira
+        - kalaakebira
+        - La Faculte 2
+        - la faculte 2
+        - lafaculte2
+        - Monastir
+        - monastir
+        - Sousse Bab Jdid
+        - sousse bab jdid
+        - soussebabjdid
+        - Sousse Mohamed V
+        - sousse mohamed v
+        - soussemohamedv
+        - Sousse Sud
+        - sousse sud
+        - soussesud
+        - Sousse Zi
+        - sousse zi
+        - soussezi
+        - Sahline Ville
+        - sahline ville
+        - sahlineville
+        - Sahline Sebkha
+        - sahline sebkha
+        - sahlinesebkha
+        - Les Hotels Monastir
+        - les hotels monastir
+        - leshotelsmonastir
+        - Aeroport Skanes Monastir
+        - aeroport skanes monastir
+        - aeroportskanesmonastir
+        - Sidi Bou Ali
+        - sidi bou ali
+        - sidibouali
+        - Skanes
+        - skanes
+        - La Faculte
+        - la faculte
+        - lafaculte
+        - Sousse Voyageurs
+        - sousse voyageurs
+        - soussevoyageurs
+        - Kalaa Sghira
+        - kalaa sghira
+        - kalaasghira
+        - Borj Ettoum
+        - borj ettoum
+        - borjettoum
+        - Mejez El Bab
+        - mejez el bab
+        - mejezelbab
+        - Sidi M'Himech
+        - sidi m'himech
+        - sidim'himech
+        - Beja Marchandises
+        - beja marchandises
+        - bejamarchandises
+        - Beja Voy
+        - beja voy
+        - bejavoy
+        - Menzel Gare
+        - menzel gare
+        - menzelgare
+        - Mastouta
+        - mastouta
+        - Sidi Smail
+        - sidi smail
+        - sidismail
+        - Bou Salem
+        - bou salem
+        - bousalem
+        - Jendouba V
+        - jendouba v
+        - jendoubav
+        - Oued Meliz
+        - oued meliz
+        - ouedmeliz
+        - Ghardimaou
+        - ghardimaou
+        - Oued Ellil
+        - oued ellil
+        - ouedellil
+        - Mannouba
+        - mannouba
+        - Le Bardo
+        - le bardo
+        - lebardo
+        - Cit\xE9 Erraoudha
+        - cit\xE9 erraoudha
+        - cit\xE9erraoudha
+        - Ghannouch
+        - ghannouch
+        - Ain Rahma
+        - ain rahma
+        - ainrahma
+        - Ichkeul
+        - ichkeul
+        - Tinja
+        - tinja
+        - La Pecherie
+        - la pecherie
+        - lapecherie
+        - Bizerte
+        - bizerte
+        - kalaa Sghira
+        - kalaa sghira
+        - kalaasghira
+        - Khanguet
+        - khanguet
+        - Tunis-PV
+        - tunis-pv
+        - Lorbeuss
+        - lorbeuss
+        - Nabeul Marchandise
+        - nabeul marchandise
+        - nabeulmarchandise
+        - Bouficha
+        - bouficha
+        - Mahdia Zone Touristique
+        - mahdia zone touristique
+        - mahdiazonetouristique
+        - El Ayoun
+        - el ayoun
+        - elayoun
+        - Magroun
+        - magroun
+        - Sidi Mtir
+        - sidi mtir
+        - sidimtir
+        - Bou Arkoub
+        - bou arkoub
+        - bouarkoub
+        - Belli
+        - belli
+        - Turki
+        - turki
+        - Grombalia
+        - grombalia
+        - Fondouk Jedid
+        - fondouk jedid
+        - fondoukjedid
+        - Bir El Bey
+        - bir el bey
+        - birelbey
+        - Gabes
+        - gabes
+        - Hammam Chat
+        - hammam chat
+        - hammamchat
+        - Tahar Sfar
+        - tahar sfar
+        - taharsfar
+        - Arret Du Stade
+        - arret du stade
+        - arretdustade
+        - Hammam Lif
+        - hammam lif
+        - hammamlif
+        - Bou Kornine
+        - bou kornine
+        - boukornine
+        - Ez-Zahra
+        - ez-zahra
+        - Rades Mel
+        - rades mel
+        - radesmel
+        - Rades
+        - rades
+        - Lycee Technique Rades
+        - lycee technique rades
+        - lyceetechniquerades
+        - Sidi Rezig
+        - sidi rezig
+        - sidirezig
+        - Skhira
+        - skhira
+        - Megrine
+        - megrine
+        - Megrine Ryad
+        - megrine ryad
+        - megrineryad
+        - Depot Farhat Hached
+        - depot farhat hached
+        - depotfarhathached
+        - Marchandise Sousse
+        - marchandise sousse
+        - marchandisesousse
+        - Parc Friguia
+        - parc friguia
+        - parcfriguia
+        - Ezzahra Lyc\xE9e
+        - ezzahra lyc\xE9e
+        - ezzahralyc\xE9e
+        - M'seken Messadine
+        - m'seken messadine
+        - m'sekenmessadine
+        - Ksar Mezouar
+        - ksar mezouar
+        - ksarmezouar
+        - Sidi Nsir
+        - sidi nsir
+        - sidinsir
+        - Mettarcheni
+        - mettarcheni
+        - Chaal
+        - chaal
+        - El Arima
+        - el arima
+        - elarima
+        - Ghraiba
+        - ghraiba
+        - Mezzouna
+        - mezzouna
+        - El Kerma
+        - el kerma
+        - elkerma
+        - Maknassy
+        - maknassy
+        - Menzel Bouzaiane
+        - menzel bouzaiane
+        - menzelbouzaiane
+        - Sened
+        - sened
+        - Zannouch
+        - zannouch
+        - Oued El Ksab (23/24)
+        - oued el ksab (23/24)
+        - ouedelksab(23/24)
+        - Cheria
+        - cheria
+        - Mahares
+        - mahares
+        - Mg 28/29
+        - mg 28/29
+        - mg28/29
+        - Le Kriz
+        - le kriz
+        - lekriz
+        - Degueche
+        - degueche
+        - Tozeur
+        - tozeur
+        - Gafsa
+        - gafsa
+        - El Guetar
+        - el guetar
+        - elguetar
+        - Mg N1
+        - mg n1
+        - mgn1
+        - Segui
+        - segui
+        - El Fejij
+        - el fejij
+        - elfejij
+        - Mg N4
+        - mg n4
+        - mgn4
+        - Gargour
+        - gargour
+        - Metlaoui
+        - metlaoui
+        - Selja
+        - selja
+        - Om El Arais
+        - om el arais
+        - omelarais
+        - Maagen Bel Abbes
+        - maagen bel abbes
+        - maagenbelabbes
+        - Feriana
+        - feriana
+        - Thelepte
+        - thelepte
+        - Mekdoudech
+        - mekdoudech
+        - Mateur
+        - mateur
+        - Mateur Sud
+        - mateur sud
+        - mateursud
+        - Ghezala
+        - ghezala
+        - Sidi Abid
+        - sidi abid
+        - sidiabid
+        - Jalta
+        - jalta
+        - Jefna
+        - jefna
+        - Sedjnane
+        - sedjnane
+        - El Harrech
+        - el harrech
+        - elharrech
+        - Tamera
+        - tamera
+        - Les Salines
+        - les salines
+        - lessalines
+        - Zaafrane
+        - zaafrane
+        - Le Kef
+        - le kef
+        - lekef
+        - Djebal Jelloud
+        - djebal jelloud
+        - djebaljelloud
+        - Bir Kassa
+        - bir kassa
+        - birkassa
+        - Nassen
+        - nassen
+        - Khledia
+        - khledia
+        - Oudna
+        - oudna
+        - Cheylus
+        - cheylus
+        - Bir M'Cherga
+        - bir m'cherga
+        - birm'cherga
+        - Depienne
+        - depienne
+        - El Ouja
+        - el ouja
+        - elouja
+        - Pont Du Fahs
+        - pont du fahs
+        - pontdufahs
+        - Thibica
+        - thibica
+        - Tarf Echena
+        - tarf echena
+        - tarfechena
+  - to_place:
+      exemples:
+        - Sfax
+        - sfax
+        - Tunis Ville
+        - tunis ville
+        - tunisville
+        - Tunis
+        - tunis
+        - Aouinet
+        - aouinet
+        - Sakiet Ezzit
+        - sakiet ezzit
+        - sakietezzit
+        - Bou Arada
+        - bou arada
+        - bouarada
+        - Jelida
+        - jelida
+        - El Aroussa
+        - el aroussa
+        - elaroussa
+        - Sidi Ayed
+        - sidi ayed
+        - sidiayed
+        - Gaafour
+        - gaafour
+        - El Akhouat
+        - el akhouat
+        - elakhouat
+        - Le Krib
+        - le krib
+        - lekrib
+        - Sidi Bou Rouis
+        - sidi bou rouis
+        - sidibourouis
+        - Trika
+        - trika
+        - Le Sers
+        - le sers
+        - lesers
+        - Sidi Salah
+        - sidi salah
+        - sidisalah
+        - Oued Tessa
+        - oued tessa
+        - ouedtessa
+        - Les Zouarines
+        - les zouarines
+        - leszouarines
+        - Dahmani
+        - dahmani
+        - Ain Mesria
+        - ain mesria
+        - ainmesria
+        - Fej Etameur
+        - fej etameur
+        - fejetameur
+        - Oued Sarrath
+        - oued sarrath
+        - ouedsarrath
+        - Kalaa Khasba
+        - kalaa khasba
+        - kalaakhasba
+        - Haidra
+        - haidra
+        - Foussana
+        - foussana
+        - Voie Ballastiere- El hrich
+        - voie ballastiere- el hrich
+        - voieballastiere-elhrich
+        - Dokhane
+        - dokhane
+        - Bir Bourekba
+        - bir bourekba
+        - birbourekba
+        - Hammamet
+        - hammamet
+        - Omar Khayem
+        - omar khayem
+        - omarkhayem
+        - M'Razka
+        - m'razka
+        - Nabeul Voyageurs
+        - nabeul voyageurs
+        - nabeulvoyageurs
+        - M'Saken
+        - m'saken
+        - Jemmal
+        - jemmal
+        - Moknine Marchandises
+        - moknine marchandises
+        - mokninemarchandises
+        - Founi
+        - founi
+        - Hamada
+        - hamada
+        - La Hencha
+        - la hencha
+        - lahencha
+        - Beau Sejour
+        - beau sejour
+        - beausejour
+        - Menzel Bourguiba
+        - menzel bourguiba
+        - menzelbourguiba
+        - Borj Cedria
+        - borj cedria
+        - borjcedria
+        - Erriadh
+        - erriadh
+        - La Goulette
+        - la goulette
+        - lagoulette
+        - Aguila
+        - aguila
+        - M'Dhilla
+        - m'dhilla
+        - Sehib
+        - sehib
+        - Tabeddit
+        - tabeddit
+        - Redeyef
+        - redeyef
+        - El Jem
+        - el jem
+        - eljem
+        - Kasserine
+        - kasserine
+        - Sbeitla
+        - sbeitla
+        - Zerzour
+        - zerzour
+        - Jilma
+        - jilma
+        - Hajeb El Aioun
+        - hajeb el aioun
+        - hajebelaioun
+        - Sidi Saad
+        - sidi saad
+        - sidisaad
+        - Gouraia
+        - gouraia
+        - Jerissa PV
+        - jerissa pv
+        - jerissapv
+        - Tajerouine
+        - tajerouine
+        - Mahdia
+        - mahdia
+        - Kerker
+        - kerker
+        - Mahdia Ezzahra
+        - mahdia ezzahra
+        - mahdiaezzahra
+        - Borj Arif
+        - borj arif
+        - borjarif
+        - Sidi Masaoud
+        - sidi masaoud
+        - sidimasaoud
+        - Baghdedi
+        - baghdedi
+        - Charaf
+        - charaf
+        - Bekalta
+        - bekalta
+        - Teboulba
+        - teboulba
+        - Teboulba Zi
+        - teboulba zi
+        - teboulbazi
+        - Moknine Voyageurs
+        - moknine voyageurs
+        - mokninevoyageurs
+        - Sidi Bou Goubrine
+        - sidi bou goubrine
+        - sidibougoubrine
+        - Moknine Griba
+        - moknine griba
+        - mokninegriba
+        - Ksar Helal
+        - ksar helal
+        - ksarhelal
+        - Ksar Helal Zi
+        - ksar helal zi
+        - ksarhelalzi
+        - Sayeda
+        - sayeda
+        - Lamta
+        - lamta
+        - Bouhjar
+        - bouhjar
+        - Ksiba Bennane
+        - ksiba bennane
+        - ksibabennane
+        - Khnis/Bembla
+        - khnis/bembla
+        - Frina
+        - frina
+        - Monastir Zi
+        - monastir zi
+        - monastirzi
+        - Kalaa Kebira
+        - kalaa kebira
+        - kalaakebira
+        - La Faculte 2
+        - la faculte 2
+        - lafaculte2
+        - Monastir
+        - monastir
+        - Sousse Bab Jdid
+        - sousse bab jdid
+        - soussebabjdid
+        - Sousse Mohamed V
+        - sousse mohamed v
+        - soussemohamedv
+        - Sousse Sud
+        - sousse sud
+        - soussesud
+        - Sousse Zi
+        - sousse zi
+        - soussezi
+        - Sahline Ville
+        - sahline ville
+        - sahlineville
+        - Sahline Sebkha
+        - sahline sebkha
+        - sahlinesebkha
+        - Les Hotels Monastir
+        - les hotels monastir
+        - leshotelsmonastir
+        - Aeroport Skanes Monastir
+        - aeroport skanes monastir
+        - aeroportskanesmonastir
+        - Sidi Bou Ali
+        - sidi bou ali
+        - sidibouali
+        - Skanes
+        - skanes
+        - La Faculte
+        - la faculte
+        - lafaculte
+        - Sousse Voyageurs
+        - sousse voyageurs
+        - soussevoyageurs
+        - Kalaa Sghira
+        - kalaa sghira
+        - kalaasghira
+        - Borj Ettoum
+        - borj ettoum
+        - borjettoum
+        - Mejez El Bab
+        - mejez el bab
+        - mejezelbab
+        - Sidi M'Himech
+        - sidi m'himech
+        - sidim'himech
+        - Beja Marchandises
+        - beja marchandises
+        - bejamarchandises
+        - Beja Voy
+        - beja voy
+        - bejavoy
+        - Menzel Gare
+        - menzel gare
+        - menzelgare
+        - Mastouta
+        - mastouta
+        - Sidi Smail
+        - sidi smail
+        - sidismail
+        - Bou Salem
+        - bou salem
+        - bousalem
+        - Jendouba V
+        - jendouba v
+        - jendoubav
+        - Oued Meliz
+        - oued meliz
+        - ouedmeliz
+        - Ghardimaou
+        - ghardimaou
+        - Oued Ellil
+        - oued ellil
+        - ouedellil
+        - Mannouba
+        - mannouba
+        - Le Bardo
+        - le bardo
+        - lebardo
+        - Cit\xE9 Erraoudha
+        - cit\xE9 erraoudha
+        - cit\xE9erraoudha
+        - Ghannouch
+        - ghannouch
+        - Ain Rahma
+        - ain rahma
+        - ainrahma
+        - Ichkeul
+        - ichkeul
+        - Tinja
+        - tinja
+        - La Pecherie
+        - la pecherie
+        - lapecherie
+        - Bizerte
+        - bizerte
+        - kalaa Sghira
+        - kalaa sghira
+        - kalaasghira
+        - Khanguet
+        - khanguet
+        - Tunis-PV
+        - tunis-pv
+        - Lorbeuss
+        - lorbeuss
+        - Nabeul Marchandise
+        - nabeul marchandise
+        - nabeulmarchandise
+        - Bouficha
+        - bouficha
+        - Mahdia Zone Touristique
+        - mahdia zone touristique
+        - mahdiazonetouristique
+        - El Ayoun
+        - el ayoun
+        - elayoun
+        - Magroun
+        - magroun
+        - Sidi Mtir
+        - sidi mtir
+        - sidimtir
+        - Bou Arkoub
+        - bou arkoub
+        - bouarkoub
+        - Belli
+        - belli
+        - Turki
+        - turki
+        - Grombalia
+        - grombalia
+        - Fondouk Jedid
+        - fondouk jedid
+        - fondoukjedid
+        - Bir El Bey
+        - bir el bey
+        - birelbey
+        - Gabes
+        - gabes
+        - Hammam Chat
+        - hammam chat
+        - hammamchat
+        - Tahar Sfar
+        - tahar sfar
+        - taharsfar
+        - Arret Du Stade
+        - arret du stade
+        - arretdustade
+        - Hammam Lif
+        - hammam lif
+        - hammamlif
+        - Bou Kornine
+        - bou kornine
+        - boukornine
+        - Ez-Zahra
+        - ez-zahra
+        - Rades Mel
+        - rades mel
+        - radesmel
+        - Rades
+        - rades
+        - Lycee Technique Rades
+        - lycee technique rades
+        - lyceetechniquerades
+        - Sidi Rezig
+        - sidi rezig
+        - sidirezig
+        - Skhira
+        - skhira
+        - Megrine
+        - megrine
+        - Megrine Ryad
+        - megrine ryad
+        - megrineryad
+        - Depot Farhat Hached
+        - depot farhat hached
+        - depotfarhathached
+        - Marchandise Sousse
+        - marchandise sousse
+        - marchandisesousse
+        - Parc Friguia
+        - parc friguia
+        - parcfriguia
+        - Ezzahra Lyc\xE9e
+        - ezzahra lyc\xE9e
+        - ezzahralyc\xE9e
+        - M'seken Messadine
+        - m'seken messadine
+        - m'sekenmessadine
+        - Ksar Mezouar
+        - ksar mezouar
+        - ksarmezouar
+        - Sidi Nsir
+        - sidi nsir
+        - sidinsir
+        - Mettarcheni
+        - mettarcheni
+        - Chaal
+        - chaal
+        - El Arima
+        - el arima
+        - elarima
+        - Ghraiba
+        - ghraiba
+        - Mezzouna
+        - mezzouna
+        - El Kerma
+        - el kerma
+        - elkerma
+        - Maknassy
+        - maknassy
+        - Menzel Bouzaiane
+        - menzel bouzaiane
+        - menzelbouzaiane
+        - Sened
+        - sened
+        - Zannouch
+        - zannouch
+        - Oued El Ksab (23/24)
+        - oued el ksab (23/24)
+        - ouedelksab(23/24)
+        - Cheria
+        - cheria
+        - Mahares
+        - mahares
+        - Mg 28/29
+        - mg 28/29
+        - mg28/29
+        - Le Kriz
+        - le kriz
+        - lekriz
+        - Degueche
+        - degueche
+        - Tozeur
+        - tozeur
+        - Gafsa
+        - gafsa
+        - El Guetar
+        - el guetar
+        - elguetar
+        - Mg N1
+        - mg n1
+        - mgn1
+        - Segui
+        - segui
+        - El Fejij
+        - el fejij
+        - elfejij
+        - Mg N4
+        - mg n4
+        - mgn4
+        - Gargour
+        - gargour
+        - Metlaoui
+        - metlaoui
+        - Selja
+        - selja
+        - Om El Arais
+        - om el arais
+        - omelarais
+        - Maagen Bel Abbes
+        - maagen bel abbes
+        - maagenbelabbes
+        - Feriana
+        - feriana
+        - Thelepte
+        - thelepte
+        - Mekdoudech
+        - mekdoudech
+        - Mateur
+        - mateur
+        - Mateur Sud
+        - mateur sud
+        - mateursud
+        - Ghezala
+        - ghezala
+        - Sidi Abid
+        - sidi abid
+        - sidiabid
+        - Jalta
+        - jalta
+        - Jefna
+        - jefna
+        - Sedjnane
+        - sedjnane
+        - El Harrech
+        - el harrech
+        - elharrech
+        - Tamera
+        - tamera
+        - Les Salines
+        - les salines
+        - lessalines
+        - Zaafrane
+        - zaafrane
+        - Le Kef
+        - le kef
+        - lekef
+        - Djebal Jelloud
+        - djebal jelloud
+        - djebaljelloud
+        - Bir Kassa
+        - bir kassa
+        - birkassa
+        - Nassen
+        - nassen
+        - Khledia
+        - khledia
+        - Oudna
+        - oudna
+        - Cheylus
+        - cheylus
+        - Bir M'Cherga
+        - bir m'cherga
+        - birm'cherga
+        - Depienne
+        - depienne
+        - El Ouja
+        - el ouja
+        - elouja
+        - Pont Du Fahs
+        - pont du fahs
+        - pontdufahs
+        - Thibica
+        - thibica
+        - Tarf Echena
+        - tarf echena
+        - tarfechena
+  - date:
+      exemples:
+        - 2024-4-5
+        - aujourd'hui
+        - demain
+        - apres demain
+        - après 1 jour
+        - après 2 jours
+        - après 3 jours
+        - après 4 jours
+        - après 5 jours
+        - après 6 jours
+        - après 7 jours
+        - après 8 jours
+        - après 9 jours
+        - après 10 jours
+        - après 11 jours
+        - après 12 jours
+        - après 13 jours
+        - après 14 jours
+        - après 15 jours
+        - après 16 jours
+        - après 17 jours
+        - après 18 jours
+        - après 19 jours
+        - après 20 jours
+        - après un jour
+        - après deux jours
+        - après trois jours
+        - après quatre jours
+        - après cinq jours
+        - après six jours
+        - après sept jours
+        - après huit jours
+        - après neuf jours
+        - après dix jours
+        - après onze jours
+        - après douze jours
+        - après treize jours
+        - après quatorze jours
+        - après quinze jours
+        - après seize jours
+        - après dix-sept jours
+        - après dix-huit jours
+        - après dix-neuf jours
+        - après vingt jours
+  - time:
+      exemples:
+        - 9:30
+        - maintenant
+
+
+slots:
+  from_place:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: from_place
+
+  to_place:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: to_place
+
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+  time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: time
+
+
+
+actions:
+  - action_check_train_availability
+  - action_check_train_availability_in_a_day
+  - action_find_nearest_train_station
+  - action_check_train_availability_between_time_and_time
+  - action_check_train_availability_before_time
+  - action_check_train_availability_before_time_in_a_date
+  - action_check_next_train_availability
+
+
+
+
+
+

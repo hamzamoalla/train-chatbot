@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="../static/style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="banner">
+    <a href="../templates/base.html">
+        <img src="../static/images/logo-sncft.png" alt="image logo" id="logo">
+        </a>
+</div>
+<div class="container">
+    <div class="chatbox">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__image--header">
+                    <img src="https://img.icons8.com/color/48/000000/train.png" alt="image">
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">Votre assistant virtuel</h4>
+                    <p class="chatbox__description--header">Comment puis-je vous aider ?</p>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div></div>
+            </div>
+            <div class="chatbox__footer">
+                <input type="text" placeholder="ecrire un message...">
+                <button class="chatbox__send--footer send__button">envoyer</button>
+            </div>
+        </div>
+        <div class="chatbox__button">
+            <button><img src="../static/images/chatbox-icon.svg"></button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+    <script type="text/javascript" src="../static/app.js"></script>
+
+</body>
+</html>
